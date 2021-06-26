@@ -13,3 +13,13 @@ data.forEach(function(UFOReport) {
   });
 });
 
+
+var button = d3.select("#button");
+var form = d3.select("#form");
+form.on("submit",runEnter);
+
+function runEnter() {
+
+    d3.event.preventDefault();
+    var inputUFO = d3.select("#patient-form-input")
+}
