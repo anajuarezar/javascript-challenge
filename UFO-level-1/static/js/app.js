@@ -1,5 +1,5 @@
 // from data.js
-var tableData = data;
+var UFOData = data;
 
 var tbody = d3.select("tbody");
 
@@ -21,5 +21,7 @@ form.on("submit",runEnter);
 function runEnter() {
 
     d3.event.preventDefault();
-    var inputUFO = d3.select("#patient-form-input")
-}
+    var inputUFO = d3.select("#datetime");
+    var filterUFO = UFOData.filter(sighting => sighting.datetime === inputUFO);
+    console.log(filterUFO);
+};
