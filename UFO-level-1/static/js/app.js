@@ -16,12 +16,17 @@ data.forEach(function(UFOReport) {
 
 var button = d3.select("#button");
 var form = d3.select("#form");
-form.on("submit",runEnter);
 
-function runEnter() {
+button.on("click", UFOfilter);
+form.on("submit",UFOfilter);
+
+function UFOfilter() {
 
     d3.event.preventDefault();
     var inputUFO = d3.select("#datetime");
-    var filterUFO = UFOData.filter(sighting => sighting.datetime === inputUFO);
+    var ValueUFO = inputUFO.property("value");
+    var filterUFO = UFOData.filter(sighting => sighting.datetime === ValueUFO);
     console.log(filterUFO);
+    var UFOarray = [];
+    
 };
