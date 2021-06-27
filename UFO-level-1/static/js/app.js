@@ -15,8 +15,8 @@ data.forEach(function(UFOReport) {
 var button = d3.select("#filter-btn");
 var form = d3.select("#form");
 
-button.on("click", newtable);
-form.on("submit", newtable);
+button.on("click", UFOfilter);
+form.on("submit", UFOfilter);
 
 function UFOfilter() {
 
@@ -24,11 +24,14 @@ function UFOfilter() {
     var inputUFO = d3.select("#datetime");
     var ValueUFO = inputUFO.property("value");
     var filterUFO = UFOData.filter(sighting => sighting.datetime === ValueUFO);
-    return filterUFO
+    tbody.html("");
+
+    filterUFO.forEach(function(sighting) {
+        var row = tbody.append("tr");
+        Object.entries(sighting).forEach(function([key, value]) {
+        row.append("td").text(value);
+        });
+      });
+
 
 };
-
-function newtable() {
-    
-
-}
