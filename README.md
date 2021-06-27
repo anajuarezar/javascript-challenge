@@ -25,3 +25,5 @@ To secure the process of the JS file we had to make sure the links for the data 
 6. Once I obtained the value of the input I used that value to filter the table. I compared that value to the datetime column and selected those that matched. In order to see if it worked, I console.logged the result.
 7. After, I cleared the tbody.
 8. Now it was time to show the new table. In order to do this, I used the same process as before using the filterd data.
+
+# I want to believe
